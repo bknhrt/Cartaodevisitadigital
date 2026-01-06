@@ -1,0 +1,138 @@
+:root {
+    --bg-main: linear-gradient(160deg, #0b0b0b, #1a1a1a);
+    --glass: rgba(255,255,255,0.08);
+    --glass-hover: rgba(255,255,255,0.18);
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 390px;
+    padding: 24px;
+    text-align: center;
+    animation: fadeUp 0.8s ease;
+}
+
+header {
+    margin-bottom: 28px;
+}
+
+.profile {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.12);
+    margin-bottom: 14px;
+}
+
+h1 {
+    margin: 6px 0;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.bio {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    backdrop-filter: blur(12px);
+    background: var(--glass);
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    background: var(--glass-hover);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.instagram {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.footer {
+    margin-top: 36px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        120deg,
+        #0b0b0b,
+        #1a1a1a,
+        #0f2027,
+        #203a43,
+        #1a1a1a
+    );
+    background-size: 400% 400%;
+    animation: gradientMove 18s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
